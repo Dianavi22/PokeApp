@@ -1,10 +1,11 @@
 import React from "react";
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, StatusBar } from 'react-native';
 import { Card, IconButton, Paragraph } from 'react-native-paper';
 
 const Details = ({ pokemon, isInFavList, showFavoriteButton, toggleFavoriteCallback, imageUri }) => {
     return (
         <ScrollView>
+            <StatusBar backgroundColor={pokemon.color || 'grey'}/>
             <Card style={Styles.container}>
                 <Card.Title title={pokemon.name} titleStyle={Styles.title} 
                     right={(props) => showFavoriteButton ? <IconButton {...props} icon={isInFavList ? "star" : "star-outline"}
@@ -13,14 +14,10 @@ const Details = ({ pokemon, isInFavList, showFavoriteButton, toggleFavoriteCallb
                 <Card.Content>
                     <Paragraph>{pokemon.text}</Paragraph>
                     <View style={Styles.paddingParagraph}>
-                        {/* <Paragraph style={Styles.title}>Type</Paragraph>
-                        <View >
-                            <View style={Styles.RectangleShapeView}>
-                                <Image source={{ uri: 'https://www.pokepedia.fr/images/c/c5/Ic%C3%B4ne_Type_%C3%89lectrik_HOME.png' }}
-                                    style={{ aspectRatio: 1, height: 30 }} />
-                                <Text>   Electrik</Text>
-                            </View>
-                        </View> */}
+                        <Paragraph style={Styles.title}>Type</Paragraph>
+                        <View style={{flexDirection: 'row'}} >
+                            {pokemon.types.map((t, i) => <Text key={i} style={Styles.type}>{t}</Text>)}
+                        </View>
                         <View style={Styles.paddingParagraph}>
                             <View style={Styles.margin}>
                                 <Paragraph style={Styles.title}>Capacités</Paragraph>
@@ -60,16 +57,23 @@ const Styles = StyleSheet.create({
     paddingParagraph: {
         paddingTop: 20,
     },
-    RectangleShapeView: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 20,
-        width: 50 * 2,
-        height: 30,
-        backgroundColor: '#F3D33C',
-        borderRadius: 10,
-
-    }
+    // RectangleShapeView: {
+    //     flexDirection: 'row',
+    //     alignItems: 'center',
+    //     marginTop: 20,
+    //     height: 30,
+    //     backgroundColor: '#F3D33C',
+    //     borderRadius: 10,
+    // },
+    type: {
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: 'grey',
+        paddingVertical: 4,
+        paddingHorizontal: 8,
+        marginHorizontal: 3,
+        marginTop: 10,
+    },
 })
 
 export default Details

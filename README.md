@@ -6,7 +6,8 @@ PokéApp est une application pour avoir un pokedex directement dans sa poche. Po
 
 ## Pourquoi avoir créé PokéApp ?
 
-Depuis la sortie du jeu Pokémon Rouge en 1996 les joueurs rêvent de créer leurs propres pokémons. On a eu pokémon go qui permettait d'avoir des pokémons un peu différents les uns des autres, mais rien pour en créer de nouveaux.
+Depuis la sortie du jeu Pokémon Rouge en 1996 les joueurs rêvent de créer leurs propres pokémons. On a eu pokémon go qui permettait d'avoir des pokémons un peu différents les uns des autres, mais rien pour en créer de 
+veaux.
 
 ## Comment installer l'application ?
 
@@ -32,10 +33,11 @@ Depuis la sortie du jeu Pokémon Rouge en 1996 les joueurs rêvent de créer leu
 2. @react-native-async-storage/async-storage
 3. react-native-paper
 4. react-native-vector-icons
+5. react-native-vision-camera
 
 ## API utilisée
 
-Nou avons utilisé une API répertoriant tous les pokémons
+Nous avons utilisé une API répertoriant tous les pokémons
 
 Lien vers l'API : https://pokeapi.co/
 

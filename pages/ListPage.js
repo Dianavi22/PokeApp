@@ -36,8 +36,9 @@ const ListPage = ({navigation}) => {
             <TextInput placeholder="Rechercher..." value={search} onChangeText={setSearch} style={styles.searchBar}/>
             <IconButton icon={filterFavorites ? "star" : "star-outline"} onPress={toggleFavoritesFilter} size={30} />
         </View>
-        <FAB icon="creation" style={styles.fab} onPress={openCreator}/>
         <FlatList data={pokemonsFiltered} renderItem={renderer} />
+        <FAB icon="creation" style={styles.fab} onPress={openCreator}/>
+       
     </View>
 }
 

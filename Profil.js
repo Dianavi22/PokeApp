@@ -20,6 +20,10 @@ export default function Profil({ navigation, route }) {
         navigation.navigate('ListPage');
     }, [navigation])
 
+    const goPageInf = useCallback(() => {
+        navigation.navigate('Info');
+    }, [navigation])
+
     useEffect(() => {
         getData();
     }, []);
@@ -110,11 +114,16 @@ export default function Profil({ navigation, route }) {
                 onPressOut={updateData}
             ><Text style={styles.textColor}>Modifier</Text></TouchableOpacity>
             <TouchableOpacity
+                style={styles.buttonInf}
+                onPressOut={goPageInf}
+            ><Text style={styles.textAccess}>Informations</Text></TouchableOpacity>
+            <TouchableOpacity
                 style={styles.buttonRemove2}
                 title='Remove'
                 color='yellow'
                 onPressOut={removeData}
             ><Text style={styles.textColor}>Supprimer le compte</Text></TouchableOpacity>
+
 
 
         </View>
@@ -140,6 +149,15 @@ const styles = StyleSheet.create({
         fontSize: 40,
         margin: 10,
         fontWeight: 'bold'
+    },
+    buttonInf: {
+        borderWidth: 1,
+        borderRadius: 20,
+        paddingHorizontal: 30,
+        paddingVertical: 10,
+        marginVertical: 10,
+        marginTop: 10,
+        backgroundColor: '#FFCC03',
     },
     button: {
         borderWidth: 1,
@@ -185,7 +203,8 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         marginVertical: 10,
         marginTop: 10,
-        backgroundColor: '#4772AD'
+        backgroundColor: '#4772AD',
+        marginBottom: 50
     },
     textColor: {
         color: "white",

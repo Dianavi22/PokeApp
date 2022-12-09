@@ -6,6 +6,7 @@ const Stack = createNativeStackNavigator();
 import Register from './Register';
 import Login from './Login';
 import Profil from './Profil';
+import Info from './pages/Info';
 import ListPage from './pages/ListPage';
 import DetailsPage from './pages/DetailsPage';
 import PokemonCreatorPage from './pages/PokemonCreatorPage';
@@ -21,6 +22,7 @@ const AppNavigator = () => {
             <Stack.Screen name="DetailsPage" component={DetailsPage} options={{headerTitle: "Détails"}}/>
             <Stack.Screen name="PokemonCreator" component={PokemonCreatorPage} options={{headerTitle: "Créer votre Pokémon"}}/>
             <Stack.Screen name="CustomPokemon" component={CustomPokemonPage} options={{headerTitle: "Votre Pokémon"}}/>
+            <Stack.Screen name="Info" component={Info} options={{headerTitle: "Informations"}}/>
         </Stack.Navigator>
     )
 }
